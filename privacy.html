@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Gradient Glow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #fff, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f093fb;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 30px 0;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        .privacy-hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        .privacy-hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .privacy-hero p {
+            font-size: 18px;
+            opacity: 0.8;
+        }
+
+        .privacy-content {
+            padding: 40px 20px 80px;
+        }
+
+        .privacy-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .privacy-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #f093fb;
+        }
+
+        .privacy-section h3 {
+            font-size: 24px;
+            margin: 25px 0 15px;
+            color: #f093fb;
+        }
+
+        .privacy-section p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .privacy-section ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .privacy-section li {
+            line-height: 1.8;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .highlight-box {
+            background: rgba(240, 147, 251, 0.2);
+            border-left: 4px solid #f093fb;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .data-table th {
+            background: rgba(240, 147, 251, 0.2);
+            font-weight: bold;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 50px 20px 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .privacy-hero h1 {
+                font-size: 36px;
+            }
+
+            .privacy-section {
+                padding: 30px;
+            }
+
+            .data-table {
+                font-size: 14px;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .privacy-hero h1 {
+                font-size: 28px;
+            }
+
+            .privacy-section h2 {
+                font-size: 26px;
+            }
+
+            .data-table {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .privacy-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">🎰 Gradient Glow</div>
+                <div class="mobile-menu" onclick="toggleMenu()">☰</div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+    </div>
+
+    <section class="privacy-hero">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Last Updated: October 2024</p>
+        </div>
+    </section>
+
+    <section class="privacy-content">
+        <div class="container">
+            <div class="privacy-section">
+                <h2>1. Introduction</h2>
+                <p>Welcome to Gradient Glow's Privacy Policy. We are committed to protecting your privacy and ensuring transparency about how we handle information. This policy explains what data we collect, how we use it, and your rights regarding your information.</p>
+                
+                <div class="highlight-box">
+                    <strong>Privacy-First Approach:</strong> Gradient Glow is designed to minimize data collection. Since we don't require account registration and don't process any real money transactions, we collect very limited information about our users.
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2>2. Information We Collect</h2>
+                
+                <h3>2.1 Information You Provide</h3>
+                <p>We may collect information when you voluntarily provide it:</p>
+                <ul>
+                    <li><strong>Contact Forms:</strong> When you contact us through our website, we collect your name, email address, and message content</li>
+                    <li><strong>Feedback:</strong> Any feedback or suggestions you provide</li>
+                </ul>
+                
+                <h3>2.2 Automatically Collected Information</h3>
+                <p>When you use Gradient Glow, we may automatically collect certain technical information:</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Data Type</th>
+                            <th>Purpose</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Browser Type</td>
+                            <td>Compatibility & optimization</td>
+                            <td>Session only</td>
+                        </tr>
+                        <tr>
+                            <td>Device Information</td>
+                            <td>Responsive design adjustment</td>
+                            <td>Session only</td>
+                        </tr>
+                        <tr>
+                            <td>IP Address</td>
+                            <td>Security & analytics</td>
+                            <td>90 days</td>
+                        </tr>
+                        <tr>
+                            <td>Usage Data</td>
+                            <td>Platform improvement</td>
+                            <td>90 days</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="privacy-section">
+                <h2>3. Information We Do NOT Collect</h2>
+                <p>It's important to understand what we don't collect:</p>
+                <ul>
+                    <li><strong>Financial Information:</strong> We never collect payment information, credit card details, or banking information (since no real money is involved)</li>
+                    <li><strong>Personal Identification:</strong> No government IDs, Social Security numbers, or similar documents</li>
+                    <li><strong>Precise Geolocation:</strong> We don't track your exact location</li>
+                    <li><strong>Biometric Data:</strong> No fingerprints, facial recognition, or similar data</li>
+                    <li><strong>Account Passwords:</strong> Since we don't require accounts, we don't store passwords</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>4. How We Use Your Information</h2>
+                <p>We use collected information only for the following purposes:</p>
+                <ul>
+                    <li><strong>Platform Operation:</strong> To provide and maintain Gradient Glow's functionality</li>
+                    <li><strong>Communication:</strong> To respond to your inquiries and support requests</li>
+                    <li><strong>Improvement:</strong> To analyze usage patterns and improve user experience</li>
+                    <li><strong>Security:</strong> To protect against abuse, fraud, and technical issues</li>
+                    <li><strong>Legal Compliance:</strong> To comply with applicable laws and regulations</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <strong>We Never:</strong> Sell your data, share it with advertisers, or use it for marketing purposes without your explicit consent.
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2>5. Cookies and Tracking Technologies</h2>
+                
+                <h3>5.1 Cookies We Use</h3>
+                <p>Gradient Glow uses minimal cookies:</p>
+                <ul>
+                    <li><strong>Essential Cookies:</strong> Required for basic platform functionality (e.g., session management)</li>
+                    <li><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
+                    <li><strong>Analytics Cookies:</strong> Help us understand how users interact with our platform (anonymized)</li>
+                </ul>
+                
+                <h3>5.2 Managing Cookies</h3>
+                <p>You can control cookies through your browser settings. Note that disabling certain cookies may affect platform functionality.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>6. Data Sharing and Disclosure</h2>
+                
+                <h3>6.1 We Do Not Sell Your Data</h3>
+                <p>Gradient Glow does not sell, rent, or trade your personal information to third parties.</p>
+                
+                <h3>6.2 Limited Sharing</h3>
+                <p>We may share information only in these specific circumstances:</p>
+                <ul>
+                    <li><strong>Service Providers:</strong> Trusted third parties who help operate our platform (e.g., hosting services) under strict confidentiality agreements</li>
+                    <li><strong>Legal Requirements:</strong> When required by law, court order, or government request</li>
+                    <li><strong>Safety and Security:</strong> To protect the rights, property, or safety of Gradient Glow, our users, or others</li>
+                    <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, with user notification</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>7. Data Security</h2>
+                <p>We implement appropriate technical and organizational measures to protect your information:</p>
+                <ul>
+                    <li>Encryption of data in transit using HTTPS</li>
+                    <li>Regular security assessments and updates</li>
+                    <li>Access controls limiting who can view data</li>
+                    <li>Secure server infrastructure</li>
+                </ul>
+                
+                <p>However, no method of transmission over the internet is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>8. Your Privacy Rights</h2>
+                <p>Depending on your location, you may have the following rights:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request a copy of the personal information we hold about you</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
+                    <li><strong>Deletion:</strong> Request deletion of your personal information (subject to legal obligations)</li>
+                    <li><strong>Objection:</strong> Object to certain processing of your information</li>
+                    <li><strong>Data Portability:</strong> Request your data in a portable format</li>
+                    <li><strong>Withdraw Consent:</strong> Withdraw consent for data processing at any time</li>
+                </ul>
+                
+                <p>To exercise these rights, contact us at: nurlanmammadli2@gmail.com</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>9. Children's Privacy</h2>
+                <p>While Gradient Glow does not involve real money gambling, we recommend parental supervision for users under 18. We do not knowingly collect personal information from children under 13.</p>
+                
+                <p>If you believe we have inadvertently collected information from a child under 13, please contact us immediately so we can delete such information.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>10. International Data Transfers</h2>
+                <p>Your information may be transferred to and processed in countries other than your country of residence. We ensure appropriate safeguards are in place to protect your information in accordance with this Privacy Policy.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>11. Data Retention</h2>
+                <p>We retain your information only for as long as necessary:</p>
+                <ul>
+                    <li><strong>Contact Inquiries:</strong> Retained for 2 years after resolution</li>
+                    <li><strong>Technical Logs:</strong> Retained for 90 days</li>
+                    <li><strong>Analytics Data:</strong> Anonymized and retained for 1 year</li>
+                </ul>
+                
+                <p>After these periods, data is securely deleted or anonymized.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>12. Third-Party Links</h2>
+                <p>Gradient Glow may contain links to external websites. We are not responsible for the privacy practices of these third-party sites. We encourage you to review their privacy policies before providing any information.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>13. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy periodically to reflect changes in our practices or legal requirements. We will notify users of significant changes by:</p>
+                <ul>
+                    <li>Updating the "Last Updated" date at the top of this policy</li>
+                    <li>Posting a notice on our homepage</li>
+                    <li>Sending an email notification (if we have your contact information)</li>
+                </ul>
+                
+                <p>Continued use of Gradient Glow after policy changes constitutes acceptance of the updated policy.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>14. Contact Us</h2>
+                <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> nurlanmammadli2@gmail.com</li>
+                    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nurlan-məmmədli-b6a55b308" target="_blank" style="color: #f093fb;">Nurlan Məmmədli</a></li>
+                    <li><strong>Response Time:</strong> We aim to respond within 48 hours</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>15. Your Consent</h2>
+                <div class="highlight-box">
+                    <p><strong>By using Gradient Glow, you consent to:</strong></p>
+                    <ul>
+                        <li>The collection and use of information as described in this Privacy Policy</li>
+                        <li>The use of cookies and similar technologies</li>
+                        <li>The processing of your information as necessary to provide our services</li>
+                    </ul>
+                    <p>If you do not agree with this Privacy Policy, please discontinue use of Gradient Glow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gradient Glow</h3>
+                    <p>Your safe destination for demo casino entertainment. Play free, play safe, play responsibly.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="games.html">Games</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Information</h3>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="responsible.html">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Remember</h3>
+                    <p>🎮 100% Free Games<br>🔒 No Real Money<br>⚡ No Financial Risk<br>💯 Pure Entertainment</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gradient Glow. All rights reserved. | This is a demo platform - No real gambling involved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
