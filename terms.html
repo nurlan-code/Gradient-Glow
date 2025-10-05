@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Gradient Glow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #fff, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f093fb;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 30px 0;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        .terms-hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        .terms-hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .terms-hero p {
+            font-size: 18px;
+            opacity: 0.8;
+        }
+
+        .terms-content {
+            padding: 40px 20px 80px;
+        }
+
+        .terms-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .terms-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #f093fb;
+        }
+
+        .terms-section h3 {
+            font-size: 24px;
+            margin: 25px 0 15px;
+            color: #f093fb;
+        }
+
+        .terms-section p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .terms-section ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .terms-section li {
+            line-height: 1.8;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .highlight-box {
+            background: rgba(240, 147, 251, 0.2);
+            border-left: 4px solid #f093fb;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 50px 20px 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .terms-hero h1 {
+                font-size: 36px;
+            }
+
+            .terms-section {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .terms-hero h1 {
+                font-size: 28px;
+            }
+
+            .terms-section h2 {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .terms-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">🎰 Gradient Glow</div>
+                <div class="mobile-menu" onclick="toggleMenu()">☰</div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+    </div>
+
+    <section class="terms-hero">
+        <div class="container">
+            <h1>Terms of Service</h1>
+            <p>Last Updated: October 2024</p>
+        </div>
+    </section>
+
+    <section class="terms-content">
+        <div class="container">
+            <div class="terms-section">
+                <h2>1. Acceptance of Terms</h2>
+                <p>By accessing and using Gradient Glow ("the Platform", "we", "our", or "us"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our platform.</p>
+                
+                <div class="highlight-box">
+                    <strong>Important Notice:</strong> Gradient Glow is a demo gaming platform. No real money gambling occurs on this site. All games use virtual credits with no monetary value.
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <h2>2. Description of Service</h2>
+                <p>Gradient Glow provides free-to-play demo casino games for entertainment purposes only. Our service includes:</p>
+                <ul>
+                    <li>Access to demo versions of casino-style games including slots, card games, and table games</li>
+                    <li>Virtual credits for gameplay that have no real-world monetary value</li>
+                    <li>Educational content about casino games and responsible gaming</li>
+                    <li>Entertainment without financial risk or real money transactions</li>
+                </ul>
+                
+                <h3>2.1 No Real Money Gambling</h3>
+                <p>Gradient Glow does NOT offer real money gambling. You cannot:</p>
+                <ul>
+                    <li>Deposit real money</li>
+                    <li>Win real money</li>
+                    <li>Exchange virtual credits for real currency</li>
+                    <li>Participate in any form of real gambling</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2>3. User Eligibility</h2>
+                <p>While Gradient Glow does not involve real money gambling, we recommend that users be at least 18 years old. Parents and guardians should supervise minors using the platform to ensure appropriate use.</p>
+                
+                <h3>3.1 Account Registration</h3>
+                <p>Currently, Gradient Glow does not require account registration. Users can access games instantly without providing personal information.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>4. Acceptable Use Policy</h2>
+                <p>When using Gradient Glow, you agree to:</p>
+                <ul>
+                    <li>Use the platform for lawful entertainment purposes only</li>
+                    <li>Not attempt to hack, reverse engineer, or exploit the platform</li>
+                    <li>Not use automated tools or bots to play games</li>
+                    <li>Not impersonate others or provide false information</li>
+                    <li>Respect the intellectual property rights of Gradient Glow</li>
+                    <li>Not use the platform to promote real money gambling sites</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2>5. Virtual Credits and Game Results</h2>
+                
+                <h3>5.1 Virtual Currency</h3>
+                <p>All credits, coins, or other virtual items on Gradient Glow have NO real-world monetary value. They cannot be:</p>
+                <ul>
+                    <li>Purchased with real money</li>
+                    <li>Sold or transferred</li>
+                    <li>Exchanged for goods or services</li>
+                    <li>Redeemed for cash or prizes</li>
+                </ul>
+                
+                <h3>5.2 Game Outcomes</h3>
+                <p>Game results on Gradient Glow are generated for entertainment purposes. While we strive to simulate realistic game mechanics, outcomes are designed for demo purposes and may not reflect real casino game probabilities.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>6. Intellectual Property Rights</h2>
+                <p>All content on Gradient Glow, including but not limited to games, graphics, logos, text, and software, is the property of Gradient Glow or its licensors and is protected by copyright and intellectual property laws.</p>
+                
+                <p>You may not:</p>
+                <ul>
+                    <li>Copy, modify, or distribute our content without permission</li>
+                    <li>Use our branding or logos without authorization</li>
+                    <li>Create derivative works based on our platform</li>
+                    <li>Remove or alter copyright notices</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2>7. Privacy and Data Collection</h2>
+                <p>Gradient Glow respects your privacy. We collect minimal data necessary for platform operation. For detailed information about how we handle your data, please review our <a href="privacy.html" style="color: #f093fb;">Privacy Policy</a>.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>8. Disclaimers and Limitations</h2>
+                
+                <h3>8.1 No Warranty</h3>
+                <p>Gradient Glow is provided "as is" without warranties of any kind. We do not guarantee:</p>
+                <ul>
+                    <li>Uninterrupted or error-free service</li>
+                    <li>Accuracy of game results or information</li>
+                    <li>Compatibility with all devices or browsers</li>
+                    <li>Prevention of all security vulnerabilities</li>
+                </ul>
+                
+                <h3>8.2 Limitation of Liability</h3>
+                <p>Gradient Glow and its developers shall not be liable for any damages arising from use of the platform, including but not limited to direct, indirect, incidental, or consequential damages.</p>
+                
+                <div class="highlight-box">
+                    <strong>Important:</strong> Since no real money is involved on Gradient Glow, users cannot suffer financial losses from using our platform. However, we are not responsible for any technical issues, data loss, or other problems that may occur.
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <h2>9. Responsible Gaming</h2>
+                <p>While Gradient Glow does not involve real money, we take responsible gaming seriously:</p>
+                <ul>
+                    <li>Our platform is designed to provide entertainment without financial risk</li>
+                    <li>We encourage users to recognize the difference between demo games and real gambling</li>
+                    <li>We provide resources about responsible gaming and gambling addiction</li>
+                    <li>We do not promote or link to real money gambling sites</li>
+                </ul>
+                
+                <p>If you or someone you know struggles with gambling addiction, please seek help from organizations like Gamblers Anonymous, GamCare, or the National Council on Problem Gambling.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>10. Third-Party Links</h2>
+                <p>Gradient Glow may contain links to third-party websites for informational purposes. We are not responsible for the content, privacy practices, or availability of external sites. Accessing third-party links is at your own risk.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>11. Modifications to Service</h2>
+                <p>We reserve the right to:</p>
+                <ul>
+                    <li>Modify, suspend, or discontinue any aspect of the platform at any time</li>
+                    <li>Change these Terms of Service with or without notice</li>
+                    <li>Add or remove games and features</li>
+                    <li>Update platform functionality and design</li>
+                </ul>
+                
+                <p>Continued use of Gradient Glow after changes constitutes acceptance of modified terms.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>12. Termination</h2>
+                <p>We reserve the right to terminate or suspend access to Gradient Glow for users who violate these Terms of Service or engage in inappropriate behavior, including but not limited to:</p>
+                <ul>
+                    <li>Attempting to exploit or hack the platform</li>
+                    <li>Using the platform for illegal purposes</li>
+                    <li>Violating the Acceptable Use Policy</li>
+                    <li>Abusing or harassing other users or staff</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2>13. Governing Law</h2>
+                <p>These Terms of Service shall be governed by and construed in accordance with applicable laws. Any disputes arising from use of Gradient Glow shall be resolved through appropriate legal channels.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>14. Contact Information</h2>
+                <p>If you have questions about these Terms of Service, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> nurlanmammadli2@gmail.com</li>
+                    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nurlan-məmmədli-b6a55b308" target="_blank" style="color: #f093fb;">Nurlan Məmmədli</a></li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2>15. Severability</h2>
+                <p>If any provision of these Terms of Service is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>16. Acknowledgment</h2>
+                <div class="highlight-box">
+                    <p><strong>By using Gradient Glow, you acknowledge that:</strong></p>
+                    <ul>
+                        <li>You have read and understood these Terms of Service</li>
+                        <li>You understand that Gradient Glow is a demo platform with no real money gambling</li>
+                        <li>Virtual credits have no monetary value and cannot be exchanged for real money</li>
+                        <li>You use the platform at your own discretion and risk</li>
+                        <li>You agree to use the platform responsibly and for entertainment only</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gradient Glow</h3>
+                    <p>Your safe destination for demo casino entertainment. Play free, play safe, play responsibly.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="games.html">Games</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Information</h3>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="responsible.html">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Remember</h3>
+                    <p>🎮 100% Free Games<br>🔒 No Real Money<br>⚡ No Financial Risk<br>💯 Pure Entertainment</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gradient Glow. All rights reserved. | This is a demo platform - No real gambling involved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
